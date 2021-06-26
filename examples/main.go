@@ -1,22 +1,21 @@
-mongostore
-==========
+package main
 
-[Gorilla's Session](http://www.gorillatoolkit.org/pkg/sessions) store implementation with MongoDB
+import (
+	"context"
+	"fmt"
+	"githib.com/yarlson/mongostore"
+	"github.com/gorilla/sessions"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
+	"go.mongodb.org/mongo-driver/mongo/readpref"
+	"log"
+	"net/http"
+	"time"
+)
 
-## Requirements
+func main() {
 
-Depends on the [mongo-go-driver](https://github.com/mongodb/mongo-go-driver) library.
-
-## Installation
-
-    go get github.com/yarlson/mongostore
-
-## Documentation
-
-Available on [godoc.org](http://www.godoc.org/github.com/yarlson/mongostore).
-
-### Example
-```go
+}
 
 func initMongoClient(DSN string) (*mongo.Client, error) {
 	client, err := mongo.NewClient(options.Client().ApplyURI(DSN))
@@ -73,5 +72,3 @@ func foo(rw http.ResponseWriter, req *http.Request) {
 
 	_, _ = fmt.Fprintln(rw, "ok")
 }
-
-```
